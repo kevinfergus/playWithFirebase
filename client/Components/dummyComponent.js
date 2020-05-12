@@ -1,21 +1,20 @@
-import React from "react";
-import { connect } from "react-redux";
-// //also import any thunks you may be using here from the reducer(s)
+import React from 'react';
+import Draggable from 'react-draggable';
+import { db } from '../firebase';
 
 export class dummyComponent extends React.Component {
-  render() {
-    return (
-      <div className="dummyComponent">
-        <form>
-          <label htmlFor="name">Name </label>
-          <input name="name" type="text" placeholder="Type in a name"></input>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    );
-  }
+	render() {
+		return (
+			<Draggable>
+				<div className="dummyComponent">
+					<img draggable="false" id="Moogle" src="Moogle-v1.png" />
+					<div>Drag this</div>
+				</div>
+			</Draggable>
+		);
+	}
 }
-export default connect()(dummyComponent);
+export default dummyComponent;
 // class SomeComponent extends React.Component {
 
 //   render(){
